@@ -57,18 +57,9 @@
 
   // Environments
   "browser"       : true,     // Web Browser (window, document, etc)
-  "couch"         : false,    // CouchDB
   "devel"         : true,     // Development/debugging (alert, confirm, etc)
-  "dojo"          : false,    // Dojo Toolkit
   "jquery"        : false,    // jQuery
-  "mootools"      : false,    // MooTools
   "node"          : true,     // Node.js
-  "nonstandard"   : false,    // Widely adopted globals (escape, unescape, etc)
-  "prototypejs"   : false,    // Prototype and Scriptaculous
-  "rhino"         : false,    // Rhino
-  "worker"        : false,    // Web Workers
-  "wsh"           : false,    // Windows Scripting Host
-  "yui"           : false,    // Yahoo User Interface
 
   // Custom Globals
   "globals": {
@@ -110,30 +101,13 @@
     "_"           : false,
     "UI"          : false,
     "HttpBasicAuth":false,
-    "Winston"     : false,
-    "Winston_Papertrail":false,
     "ReactiveVar" : false,
-    "wkhtmltoimage":true,
     "Helpers"     : true,
     "log"         : true,
     "Schema"      : true,
-    "Brands"      : true,
-    "Expertises"  : true,
-    "BadgeTemplates": true,
-    "LinkTemplates": true,
-    "OfferTemplates": true,
-    "Testimonials": true,
-    "Opportunities": true,
-    "Images"      : true,
-    "Payment"     : true,
-    "StripeEvents": true,
-    "App"         : false,
     "BrowserPolicy":false,
     "WebApp"      : false,
     "ServiceConfiguration":false,
-    "IonModal"    : false,
-    "IonLoading"  : false,
-    "IonActionSheet":false,
     "SimpleSchema": false,
     "AccountsTemplates":false,
     "T9n"         : false,
@@ -143,56 +117,14 @@
     "AutoForm"    : false,
     "Random"      : false,
     "Email"       : false,
-    "sweetAlert"  : false,
-    "TimezonePicker":false,
     "Match"       : false,
     "ReactiveDict": false,
-    "OpMachine"   : true,
-    "OpStates"    : true,
-    "Conference"  : true,
     "debug"       : true,
-    "Reputation"  : true,
-    "screenfull"  : false,
-    "bowser"      : true,
-    "autosize"    : false,
-    "Autolinker"  : false,
-    "BigWebRTC"   : true,
-    "Modal"       : false,
-    "SimpleWebRTC": false,
-    "hark"        : false,
-    "attachMediaStream": false,
-    "getUserMedia": false,
-    "getScreenMedia": false,
-    "Roles"       : false,
-    "AdminConfig" : true,
-    "InstallTrigger": false,
-    "Push"        : true,
-    "Media"       : false,
-    "EmailTemplates": true,
     "HTTP"        : true,
     "Assert"      : true,
-    "StripeAPI"   : true,
     "Tracker"     : false,
     "Log"         : true,
-    "Currencies"  : true,
-    "SocialNetworks": true,
-    "SyncedCron"  : false,
-    "skipUpdatedAt": true,
-    "EventTimer"  : true,
-    "UserStatus"  : true,
-    "Alerts"      : true,
-    "appVersion"  : true,
-    "Cordova"     : false,
-    "PushNotification" : false,
-    "device"      : false,
-    "cordova"     : false,
-    "StatusBar"   : false,
-    "Search"      : true,
-    "EasySearch"  : false,
     "WebAppInternals" : true,
-    "AppPlans"    : true,
-    "Stripe"      : true,
-    "Promise"     : true,
-    "EmailLists"  : true
+    "Promise"     : true
   }
 }
