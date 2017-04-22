@@ -3,14 +3,23 @@
 BRANCH=${1?choose a branch e.g. stage, production}
 REPO=${2?choose a Docker repository e.g. company/appname}
 
-BUILDDIR=./build
+# Save current git branch
+OLDBRANCH=`git rev-parse --abbrev-ref HEAD`
+
+# Make a temporary build directory and delete on exit
+BUILDDIR=`mktemp -d`
+function cleanup {     
+  if [[ "$BUILDDIR" && -d "$BUILDDIR" ]]; then rm -rf "$BUILDDIR"; fi
+}
+trap cleanup EXIT
+
 
 # Get to code.  Exit if unsaved changes in repo
 if `git status | grep -q "nothing to commit, working directory clean"`; then
   git checkout --quiet $BRANCH || exit 1
 else
   echo "ERROR: repo has unsaved changes"
-  exit 1
+  #exit 1
 fi
 
 # This loads nvm, load node version in .nvmrc
@@ -24,17 +33,22 @@ rm -rf $BUILDDIR
 [ ! -d "node_modules" ] && npm install
 # Meteor build
 meteor build \
-  --directory ../$BUILDDIR \
+  --directory $BUILDDIR \
   --architecture os.linux.x86_64 \
   --server-only || exit 1
 
-# Docker it
-VERSION=$(node -p -e "require('./package.json').version")-$(git rev-parse --short HEAD)
+# Create sensible version `[package.json]-[git hash]`
+VERSION=`version.sh`
+
+# Build Docker Image
 tar -cz Dockerfile package.json -C $BUILDDIR bundle | \
   docker build -t $REPO:$VERSION - || exit 1
+  
+# Push to Docker repository
 docker push $REPO:$VERSION || exit 1
 
 # Done
-git checkout --quiet dev
+git checkout --quiet $OLDBRANCH
+
 echo "==========================================="
 echo "BUILT AND PUSHED $REPO:$VERSION FOR $BRANCH"
