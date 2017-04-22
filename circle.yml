@@ -1,0 +1,12 @@
+machine:
+  node:
+    # see also .nvmrc
+    version: 4.6.2
+  # Phantomjs installed by default:
+dependencies:
+  override:
+    - curl https://install.meteor.com | /bin/sh
+    - npm install
+checkout:
+  post:
+    - git submodule update --init
