@@ -1,4 +1,4 @@
-build
+.meteor
 node_modules
 *.log
 unit.xml
