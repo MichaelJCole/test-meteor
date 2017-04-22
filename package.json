@@ -11,5 +11,6 @@
   },
   "devDependencies": {
     "phantomjs-prebuilt": "^2.1.14"
-  }
+  },
+  "version": "0.0.1"
 }
