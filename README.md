@@ -61,9 +61,6 @@ npm install -g chimp
 npm install
 ```
 
-https://guide.meteor.com/testing.html#acceptance-testing
-recommends not installing chimp as package dependency
+> Note: https://guide.meteor.com/testing.html#acceptance-testing recommends not installing chimp as package dependency
 
-
-https://guide.meteor.com/testing.html#command-line
--> https://github.com/DispatchMe/meteor-mocha
+> Note: https://guide.meteor.com/testing.html#command-line ->  https://github.com/DispatchMe/meteor-mocha
