@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "test": "SERVER_TEST_REPORTER=xunit XUNIT_FILE=$CIRCLE_TEST_REPORTS/reports/unit.xml meteor test --once --driver-package dispatch:mocha"
+    "test": "SERVER_TEST_REPORTER=xunit XUNIT_FILE=$CIRCLE_TEST_REPORTS/unit/unit.xml meteor test --once --driver-package dispatch:mocha"
   },
   "dependencies": {
     "babel-runtime": "^6.20.0",
