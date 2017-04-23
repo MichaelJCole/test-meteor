@@ -2,11 +2,21 @@ machine:
   node:
     # see also .nvmrc
     version: 4.6.2
-  # Phantomjs installed by default:
+  # Phantomjs installed by default
 dependencies:
+  cache_directories:
+    - ~/.meteor
+    - ~/.npm
+    - node_modules
   override:
-    - curl https://install.meteor.com | /bin/sh
+    - if [ -d ~/.meteor ]; then sudo ln -s ~/.meteor/meteor /usr/local/bin/meteor; fi
+    - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
+    - npm install -g chimp
     - npm install
 checkout:
   post:
     - git submodule update --init
+
+test:
+  override:
+    - npm run test
