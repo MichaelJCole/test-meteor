@@ -125,6 +125,8 @@
     "Tracker"     : false,
     "Log"         : true,
     "WebAppInternals" : true,
-    "Promise"     : true
+    "Promise"     : true,
+    "client"      : true,
+    "Links"       : true
   }
 }

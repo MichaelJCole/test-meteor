@@ -1,8 +1,11 @@
 // Fill the DB with example data on startup
 
-Meteor.startup(() => {
-  // if the Links collection is empty
-  if (Links.find().count() === 0) {
+if (Meteor.isAppTest || Meteor.isTest) {
+
+  console.log('DANGERZONE: LOADING SERVER TEST FIXTURES');
+
+  Meteor.startup(() => {
+    Links.remove({});
     const data = [
       {
         title: 'Do the Tutorial',
@@ -27,5 +30,5 @@ Meteor.startup(() => {
     ];
 
     data.forEach(link => Links.insert(link));
-  }
-});
+  });
+}

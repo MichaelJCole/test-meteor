@@ -18,5 +18,5 @@ for i in seq 60; do
 done
 
 echo "Starting Acceptance Tests"
-TEST_URL=$URL chimp --path=tests
+TEST_URL=$URL chimp --path=tests --watch --ddp=$URL
 kill $METEOR_PID
